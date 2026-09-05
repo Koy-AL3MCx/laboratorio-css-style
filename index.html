@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de CSS Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;600&family=Roboto+Mono:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-tema="claro">
+
+    <header class="header-principal">
+        <div class="header-textos">
+            <h1>Laboratorio de CSS: Diseño y Presentación</h1>
+            <p>Modifica las propiedades avanzadas para ver el código en tiempo real.</p>
+        </div>
+        <button id="btnTema" class="btn-tema">🌙 Modo Oscuro</button>
+    </header>
+
+    <main class="contenedor-principal">
+        <!-- Panel de controles -->
+        <section class="controles">
+            <h2>Panel de Controles</h2>
+            
+            <!-- Elementos de Prueba & Texto -->
+            <div class="grupo-seccion">
+                <h3>1. Elemento y Contenido</h3>
+                <div class="control-grupo">
+                    <label for="tipoElemento">Tipo de Elemento:</label>
+                    <select id="tipoElemento">
+                        <option value="caja">Caja Contenedora</option>
+                        <option value="boton">Botón Interactivo</option>
+                        <option value="card">Tarjeta (Card)</option>
+                        <option value="input">Campo de Texto</option>
+                        <option value="imagen">Imagen de Prueba</option>
+                    </select>
+                </div>
+                <div class="control-grupo">
+                    <label for="textoPersonalizado">Texto de prueba:</label>
+                    <input type="text" id="textoPersonalizado" value="Este texto cambia de estilo.">
+                </div>
+            </div>
+
+            <!-- Colores y Fuentes -->
+            <div class="grupo-seccion">
+                <h3>2. Tipografía y Colores Base</h3>
+                <div class="control-grupo">
+                    <label for="colorFondo">Fondo del elemento:</label>
+                    <input type="color" id="colorFondo" value="#ffffff">
+                </div>
+                <div class="control-grupo">
+                    <label for="tipoFuente">Tipo de fuente:</label>
+                    <select id="tipoFuente">
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="'Poppins', sans-serif">Poppins</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="'Courier New', monospace">Courier New</option>
+                        <option value="'Fira Code', monospace">Fira Code</option>
+                        <option value="'Roboto Mono', monospace">Roboto Mono</option>
+                        <option value="'Pacifico', cursive">Pacifico</option>
+                        <option value="Verdana, sans-serif">Verdana</option>
+                        <option value="Tahoma, sans-serif">Tahoma</option>
+                        <option value="Impact, sans-serif">Impact</option>
+                    </select>
+                </div>
+                <div class="control-grupo">
+                    <label for="colorTitulo">Color del Título:</label>
+                    <input type="color" id="colorTitulo" value="#333333">
+                </div>
+                <div class="control-grupo">
+                    <label for="colorSubtitulo">Color del Subtítulo:</label>
+                    <input type="color" id="colorSubtitulo" value="#666666">
+                </div>
+            </div>
+
+            <!-- Modelo de Caja (Box Model) -->
+            <div class="grupo-seccion">
+                <h3>3. Modelo de Caja (Box Model)</h3>
+                <div class="control-grupo">
+                    <label>Padding: <span id="valPadding">15</span>px</label>
+                    <input type="range" id="rangePadding" min="0" max="60" value="15">
+                </div>
+                <div class="control-grupo">
+                    <label>Margin: <span id="valMargin">10</span>px</label>
+                    <input type="range" id="rangeMargin" min="0" max="50" value="10">
+                </div>
+                <div class="control-grupo">
+                    <label>Border Radius: <span id="valRadio">8</span>px</label>
+                    <input type="range" id="rangeRadio" min="0" max="50" value="8">
+                </div>
+                <div class="control-grupo">
+                    <label for="estiloBorde">Estilo de Borde:</label>
+                    <select id="estiloBorde">
+                        <option value="none">Ninguno</option>
+                        <option value="solid" selected>Sólido (solid)</option>
+                        <option value="dashed">Discontinuo (dashed)</option>
+                        <option value="dotted">Punteado (dotted)</option>
+                        <option value="double">Doble (double)</option>
+                    </select>
+                </div>
+                <div class="control-grupo">
+                    <label>Grosor de Borde: <span id="valGrosorBorde">2</span>px</label>
+                    <input type="range" id="rangeGrosorBorde" min="0" max="10" value="2">
+                </div>
+                <div class="control-grupo">
+                    <label for="colorBorde">Color de Borde:</label>
+                    <input type="color" id="colorBorde" value="#dddddd">
+                </div>
+            </div>
+
+            <!-- Layout y Disposición -->
+            <div class="grupo-seccion">
+                <h3>4. Layout y Disposición</h3>
+                <div class="control-grupo">
+                    <label for="selectDisplay">Display:</label>
+                    <select id="selectDisplay">
+                        <option value="block">Block</option>
+                        <option value="flex" selected>Flex</option>
+                        <option value="grid">Grid</option>
+                    </select>
+                </div>
+                <div id="flexOptionsContainer" class="sub-controles">
+                    <div class="control-grupo">
+                        <label for="selectJustify">Justify Content:</label>
+                        <select id="selectJustify">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center" selected>center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                        </select>
+                    </div>
+                    <div class="control-grupo">
+                        <label for="selectAlign">Align Items:</label>
+                        <select id="selectAlign">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center" selected>center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="stretch">stretch</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Efectos Visuales y Transformaciones -->
+            <div class="grupo-seccion">
+                <h3>5. Efectos y Transformaciones 2D</h3>
+                <div class="control-grupo">
+                    <label>Sombra (Box Shadow): <span id="valSombra">8</span>px</label>
+                    <input type="range" id="rangeSombra" min="0" max="40" value="8">
+                </div>
+                <div class="control-grupo">
+                    <label>Opacidad: <span id="valOpacidad">1</span></label>
+                    <input type="range" id="rangeOpacidad" min="0.1" max="1" step="0.05" value="1">
+                </div>
+                <div class="control-grupo">
+                    <label>Desenfoque (Blur): <span id="valBlur">0</span>px</label>
+                    <input type="range" id="rangeBlur" min="0" max="15" value="0">
+                </div>
+                <div class="control-grupo">
+                    <label>Escala (Transform Scale): <span id="valEscala">1</span></label>
+                    <input type="range" id="rangeEscala" min="0.5" max="1.5" step="0.05" value="1">
+                </div>
+                <div class="control-grupo">
+                    <label>Rotación: <span id="valRotacion">0</span>°</label>
+                    <input type="range" id="rangeRotacion" min="-180" max="180" value="0">
+                </div>
+            </div>
+
+            <button id="btnReset" class="btn-reset">🔄 Reiniciar Valores</button>
+        </section>
+
+        <!-- Área de Vista Previa Dinámica -->
+        <section class="panel-preview">
+            <h3>Vista Previa en Vivo</h3>
+            <div id="contenedorPreviewArea" class="preview-stage">
+                <div id="elementoDinamico" class="elemento-base">
+                    <h3 id="tituloCaja">Caja de Prueba</h3>
+                    <p id="parrafoCaja">Este texto cambia de estilo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de Código Generado -->
+        <section class="panel-codigo">
+            <div class="header-codigo">
+                <h3>Código CSS Generado:</h3>
+                <button id="btnCopiar" class="btn-copiar">📋 Copiar CSS</button>
+            </div>
+            <pre><code id="bloqueCodigo">.elemento-dinamico {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1) rotate(0deg);
+}</code></pre>
+        </section>
+    </main>
+
+    <!-- Pie de página con créditos -->
+    <creditos class="creditos-footer">
+        <p>&copy; 2026 - Creado por Alejandro | Asistido por IA</p>
+    </creditos>
+
+    <script src="script.js"></script>
+</body>
+</html>
